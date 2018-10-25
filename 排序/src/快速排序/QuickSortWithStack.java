@@ -67,6 +67,7 @@ public class QuickSortWithStack {
 			while(left<right && arr[left] <= pivot){
 				left++;
 			}
+			//½»»»Ö¸Õë
 			if(left<right){
 				int p = arr[right];
 				arr[right] = arr[left];
