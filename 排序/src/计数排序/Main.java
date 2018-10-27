@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
-		int[] arr = new int[]{4,4,3,5,6,7,8,9,1,3,4,5};
+		int[] arr = new int[]{95,94,91,98,99,90,93,91,92};
 		int[] sortedArray = countSort(arr);
 		System.out.println(Arrays.toString(sortedArray));
 	}
@@ -29,8 +29,18 @@ public class Main {
 			countArray[arr[i] - min]++;
 		}
 		
-		  
-		return null;
+		int sum = 0;
+		for(int i = 0; i < countArray.length;i++){
+			sum += countArray[i];
+			countArray[i] = sum;
+		}
+		
+		int[] sortedArray = new int[arr.length];
+		for(int i = arr.length - 1;i >= 0; i--){
+			sortedArray[countArray[arr[i] - min] - 1] = arr[i];
+			countArray[arr[i] - min] --;
+		}
+		return sortedArray;
 	}
 
 }
